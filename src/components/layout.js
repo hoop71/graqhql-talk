@@ -5,14 +5,31 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
+// React
 import React from "react"
-import PropTypes from "prop-types"
+
+// Gatsby
 import { useStaticQuery, graphql } from "gatsby"
 
+// Components
 import Header from "./header"
+
+// Material
+import { makeStyles } from "@material-ui/core"
+
+// CSS
 import "./layout.css"
 
+const useStyles = makeStyles({
+  mainWrapper: {
+    margin: `0 auto`,
+    maxWidth: 1150,
+    padding: `0 1.0875rem 1.45rem`,
+  },
+})
+
 const Layout = ({ children }) => {
+  const classes = useStyles()
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -24,28 +41,14 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <React.Fragment>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
+      <div className={classes.mainWrapper}>
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        <footer></footer>
       </div>
-    </>
+    </React.Fragment>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout
