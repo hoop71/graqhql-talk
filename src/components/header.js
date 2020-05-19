@@ -34,8 +34,7 @@ const Header = ({ siteTitle }) => (
         <a
           href="https://github.com/hoop71/graqhql-talk"
           target="_blank"
-          rel="noopener"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
           <svg
             width="80"
