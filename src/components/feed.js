@@ -57,7 +57,6 @@ export default () => {
     }
   `)
   const photos = data.allInstaNode.edges
-  debugger
   return (
     <div className={classes.wrapper}>
       {photos.map(photo => {

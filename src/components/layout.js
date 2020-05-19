@@ -26,6 +26,17 @@ const useStyles = makeStyles({
     maxWidth: 1150,
     padding: `0 1.0875rem 1.45rem`,
   },
+  svg: {
+    fill: "#64ceaam",
+    color: "#fffm",
+    position: "absolutem",
+    top: "0m",
+    border: "0m",
+    right: "0m",
+  },
+  path: {
+    transformOrigin: "130px 106px",
+  },
 })
 
 const Layout = ({ children }) => {
@@ -47,6 +58,7 @@ const Layout = ({ children }) => {
         <main>{children}</main>
         <footer></footer>
       </div>
+      {/* <!-- Github --> */}
     </React.Fragment>
   )
 }
