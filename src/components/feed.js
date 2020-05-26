@@ -64,7 +64,7 @@ export default () => {
       <Grid container>
         {photos.map(photo => {
           return (
-            <Grid xs={4} md={4} item key={photo.node.id}>
+            <Grid xs={4} item key={photo.node.id} justifyContent="center">
               <Card
                 caption={photo.node.caption}
                 src={photo.node.thumbnails[4].src}
