@@ -12,9 +12,6 @@ const useStyles = makeStyles({
     maxWidth: 350,
     padding: "1em",
     paddingBottom: 0,
-    display: "flex",
-    justifyContent: "center",
-    flexDirection: "column",
     margin: ".25em",
     "&:hover": {
       backgroundColor: "#e0dede",

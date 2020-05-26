@@ -61,10 +61,10 @@ export default () => {
 
   return (
     <div className={classes.wrapper}>
-      <Grid container>
+      <Grid container justify="center">
         {photos.map(photo => {
           return (
-            <Grid xs={4} item key={photo.node.id} justifyContent="center">
+            <Grid xs={4} item key={photo.node.id}>
               <Card
                 caption={photo.node.caption}
                 src={photo.node.thumbnails[4].src}
