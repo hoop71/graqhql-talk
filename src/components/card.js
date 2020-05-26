@@ -11,6 +11,7 @@ const useStyles = makeStyles({
   root: {
     maxWidth: 350,
     padding: "1em",
+    paddingBottom: 0,
     margin: ".25em",
     "&:hover": {
       backgroundColor: "#e0dede",
@@ -21,17 +22,23 @@ const useStyles = makeStyles({
     width: 315,
   },
   caption: {
-    maxHeight: "100px",
+    maxHeight: "120px",
     overflowY: "scroll",
     backgroundColor: "white",
     padding: "1em",
     borderRadius: "3px",
   },
+  timestamp: {
+    display: "flex",
+    justifyContent: "center",
+    paddingTop: 10,
+    paddingBottom: 0,
+    marginBottom: 0,
+  },
 })
 
-export default function MediaCard({ caption, src }) {
+export default function MediaCard({ caption, src, timestamp }) {
   const classes = useStyles()
-
   return (
     <Card className={classes.root} raised>
       <CardMedia
@@ -41,13 +48,16 @@ export default function MediaCard({ caption, src }) {
       />
       <CardContent>
         <Typography
-          variant="body2"
+          className={classes.caption}
           color="textSecondary"
           component="p"
-          className={classes.caption}
+          variant="body2"
         >
           {caption}
         </Typography>
+        {/* <Typography className={classes.timestamp} variant="caption">
+          {new Date(timestamp * 1000).toLocaleString()}
+        </Typography> */}
       </CardContent>
     </Card>
   )

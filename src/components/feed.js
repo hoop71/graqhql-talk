@@ -5,22 +5,20 @@ import React from "react"
 import Card from "./card"
 
 // Material
-import { makeStyles } from "@material-ui/core"
+import { makeStyles, Grid } from "@material-ui/core"
 
 // Gataby
 import { useStaticQuery, graphql } from "gatsby"
 
 const useStyles = makeStyles({
   wrapper: {
-    display: "flex",
-    justifyContent: "space-between",
-    marginBottom: "1em",
-    flexWrap: "wrap",
+    flexGrow: 1,
   },
 })
 
 export default () => {
   const classes = useStyles()
+
   const data = useStaticQuery(graphql`
     query InstaFeedData {
       allInstaNode {
@@ -56,19 +54,24 @@ export default () => {
       }
     }
   `)
+
   const photos = data.allInstaNode.edges
+
   return (
     <div className={classes.wrapper}>
-      {photos.map(photo => {
-        return (
-          <div>
-            <Card
-              src={photo.node.thumbnails[4].src}
-              caption={photo.node.caption}
-            />
-          </div>
-        )
-      })}
+      <Grid container>
+        {photos.map(photo => {
+          return (
+            <Grid xs={4} md={4} item key={photo.node.id}>
+              <Card
+                caption={photo.node.caption}
+                src={photo.node.thumbnails[4].src}
+                timestamp={photo.node.timestamp}
+              />
+            </Grid>
+          )
+        })}
+      </Grid>
     </div>
   )
 }
