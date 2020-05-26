@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Nasagram`,
+    title: `Spacexgram!`,
     description: `For the Benefit of All`,
     author: `Matt Hooper`,
   },
@@ -30,7 +30,7 @@ module.exports = {
     {
       resolve: `gatsby-source-instagram`,
       options: {
-        username: `nasa`,
+        username: `spacex`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
