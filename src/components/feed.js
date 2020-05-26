@@ -16,6 +16,10 @@ const useStyles = makeStyles({
     justifyContent: "center",
     flexGrow: 1,
   },
+  card: {
+    justifyContent: "center",
+    display: "flex",
+  },
 })
 
 export default () => {
@@ -64,7 +68,7 @@ export default () => {
       <Grid container justify="center">
         {photos.map(photo => {
           return (
-            <Grid xs={4} item key={photo.node.id}>
+            <Grid xs={4} item key={photo.node.id} className={classes.card}>
               <Card
                 caption={photo.node.caption}
                 src={photo.node.thumbnails[4].src}
