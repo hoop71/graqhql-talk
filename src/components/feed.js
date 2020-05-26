@@ -12,6 +12,8 @@ import { useStaticQuery, graphql } from "gatsby"
 
 const useStyles = makeStyles({
   wrapper: {
+    display: "flex",
+    justifyContent: "center",
     flexGrow: 1,
   },
 })
